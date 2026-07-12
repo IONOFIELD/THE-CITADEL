@@ -24,6 +24,7 @@
     },
     "android": {
       "adaptiveIcon": {
+        "foregroundImage": "./assets/icon.png",
         "backgroundColor": "#050804"
       },
       "package": "com.bitcoinobserver.app",
