@@ -51,6 +51,17 @@ export const FONTS = {
   system: 'monospace',
 };
 
+// Header typography — Cascadia Code (the terminal/PowerShell font, matches the
+// app icon). Loaded via expo-font in App.js under the family name 'CascadiaCode'.
+export const HEADER_FONT = 'CascadiaCode';
+
+// Amber "bloom" applied to all headers so they glow like the icon.
+export const HEADER_GLOW = {
+  textShadowColor: '#f7931a99',
+  textShadowOffset: { width: 0, height: 0 },
+  textShadowRadius: 14,
+};
+
 export const SPACING = {
   xs: 4,
   sm: 8,

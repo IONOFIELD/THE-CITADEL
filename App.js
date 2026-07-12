@@ -1,12 +1,13 @@
 import React from 'react';
 import { StatusBar } from 'expo-status-bar';
+import { useFonts } from 'expo-font';
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { View, Text, StyleSheet } from 'react-native';
 import Svg, { Path } from 'react-native-svg';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 import { BitcoinProvider } from './src/context/BitcoinContext';
-import { COLORS } from './src/utils/theme';
+import { COLORS, HEADER_FONT, HEADER_GLOW } from './src/utils/theme';
 
 import DashboardScreen from './src/screens/DashboardScreen';
 import PortfolioScreen from './src/screens/PortfolioScreen';
@@ -68,6 +69,14 @@ const DarkTheme = {
 };
 
 export default function App() {
+  const [fontsLoaded] = useFonts({
+    CascadiaCode: require('./assets/fonts/CascadiaCode.ttf'),
+  });
+
+  if (!fontsLoaded) {
+    return <View style={{ flex: 1, backgroundColor: COLORS.bgDeep }} />;
+  }
+
   return (
     <SafeAreaProvider>
       <BitcoinProvider>
@@ -93,7 +102,7 @@ export default function App() {
                   <View style={{ paddingTop: 44, paddingBottom: 10, alignItems: 'center' }}>
                     <Text style={{
                       color: COLORS.btc,
-                      fontFamily: 'monospace',
+                      fontFamily: HEADER_FONT,
                       fontSize: 22,
                       letterSpacing: 3,
                       fontWeight: '700',

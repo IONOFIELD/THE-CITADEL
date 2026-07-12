@@ -1,6 +1,6 @@
 import React from 'react';
 import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
-import { COLORS, FONT_SIZES, SPACING } from '../utils/theme';
+import { COLORS, FONT_SIZES, SPACING, HEADER_FONT, HEADER_GLOW } from '../utils/theme';
 
 // ━━━ STAT CARD ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 export function StatCard({ label, value, sub, accent, style }) {
@@ -107,8 +107,9 @@ const styles = StyleSheet.create({
     fontSize: FONT_SIZES.sm,
     color: COLORS.btc,
     letterSpacing: 3,
-    fontFamily: 'monospace',
+    fontFamily: HEADER_FONT,
     textTransform: 'uppercase',
+    ...HEADER_GLOW,
   },
   sectionRight: {
     fontSize: FONT_SIZES.xs,

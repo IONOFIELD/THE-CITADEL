@@ -5,7 +5,7 @@ import {
 } from 'react-native';
 import * as Clipboard from 'expo-clipboard';
 import { useBitcoin } from '../context/BitcoinContext';
-import { COLORS, SPACING, FONT_SIZES, API, DONATE_ADDRESS, DONATE_LIGHTNING } from '../utils/theme';
+import { COLORS, SPACING, FONT_SIZES, API, DONATE_ADDRESS, DONATE_LIGHTNING, HEADER_FONT, HEADER_GLOW } from '../utils/theme';
 import { fmtUSD, fmtCompact, truncateAddr, satsToBTC } from '../utils/format';
 import { loadWatchlist, saveWatchlist } from '../utils/storage';
 import { SectionHeader, Divider, EmptyState } from '../components/UI';
@@ -347,8 +347,8 @@ const styles = StyleSheet.create({
   container: { flex: 1, backgroundColor: COLORS.bgDeep },
   headerArea: { padding: SPACING.xl },
   headerTitle: {
-    fontSize: FONT_SIZES.lg, color: COLORS.btc, fontFamily: 'monospace',
-    letterSpacing: 3, fontWeight: '700',
+    fontSize: FONT_SIZES.lg, color: COLORS.btc, fontFamily: HEADER_FONT,
+    letterSpacing: 3, fontWeight: '700', ...HEADER_GLOW,
   },
   headerSub: {
     fontSize: FONT_SIZES.xs, color: COLORS.textGhost, fontFamily: 'monospace',
@@ -447,8 +447,8 @@ const styles = StyleSheet.create({
     borderRadius: 2,
   },
   donateTitle: {
-    fontSize: FONT_SIZES.sm, color: COLORS.btc, fontFamily: 'monospace',
-    letterSpacing: 3, fontWeight: '700',
+    fontSize: FONT_SIZES.sm, color: COLORS.btc, fontFamily: HEADER_FONT,
+    letterSpacing: 3, fontWeight: '700', ...HEADER_GLOW,
   },
   donateSub: {
     fontSize: FONT_SIZES.sm, color: COLORS.textMuted, fontFamily: 'monospace',
